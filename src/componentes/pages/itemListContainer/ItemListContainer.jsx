@@ -26,7 +26,7 @@ export const ItemListContainer = ({ greeting }) => {
 
   return (
     <Box sx={{ bgcolor: "primary.light", p: 2 }}>
-      <h1 style={{ color: "whitesmoke" }}>{greeting}</h1>
+      <h1 style={{ color: "whitesmoke" }}>Bienvenidos amigos!</h1>
       <Box>
         <ItemList items={items} />
       </Box>

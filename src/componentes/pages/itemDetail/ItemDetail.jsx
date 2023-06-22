@@ -1,14 +1,22 @@
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { ItemCount } from "../../common/itemCount/ItemCount";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-export const ItemDetail = ({ productSelected }) => {
+export const ItemDetail = ({ productSelected, agregarAlCarrito, cantidad }) => {
+  // const [cantAgregada, setCantAgregada] = useState(0);
+
+  // const handleOnAdd = (cantidad) => {
+  //   setCantAgregada(cantidad);
+  // };
+
   const onAdd = (cantidad) => {
     let data = {
       ...productSelected,
       quantity: cantidad,
     };
 
-    console.log(data);
+    agregarAlCarrito(data);
   };
 
   return (
@@ -42,10 +50,23 @@ export const ItemDetail = ({ productSelected }) => {
           <p>Precio: {productSelected.precio}</p>
         </div>
         {productSelected.stock > 0 ? (
-          <ItemCount stock={productSelected.stock} initial={1} onAdd={onAdd} />
+          <ItemCount
+            stock={productSelected.stock}
+            initial={cantidad}
+            onAdd={onAdd}
+          />
         ) : (
           <h3>No hay stock</h3>
         )}
+        {/* {cantAgregada > 0 ? (
+          <Link to="/cart">
+            <Button variant="contained" color="primary">
+              Terminar compra
+            </Button>
+          </Link>
+        ) : (
+          <ItemCount stock={productSelected.stock} initial={1} onAdd={onAdd} />
+        )} */}
       </Box>
     </div>
   );

@@ -1,7 +1,7 @@
 import { Box, Button } from "@mui/material";
 import { useState } from "react";
 
-export const ItemCount = ({ stock, initial, onAdd }) => {
+export const ItemCount = ({ stock, initial = 1, onAdd }) => {
   const [cantidad, setCantidad] = useState(initial);
 
   const agregar = () => {

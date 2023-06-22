@@ -1,43 +1,34 @@
-import { ItemListContainer } from "./componentes/pages/itemListContainer/ItemListContainer";
-
-import { ItemDetailContainer } from "./componentes/pages/itemDetail/ItemDetailContainer";
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./componentes/layout/Layout";
-import { CartContainer } from "./componentes/pages/CartContainer";
+
+import { menuRoutes } from "./routes/menurRoutes";
+import { CartContextProvider } from "./context/CartContext";
 
 function App() {
-  let greeting = "Buenos días amigos!";
-
   return (
     <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
+      <CartContextProvider>
+        <Routes>
+          <Route element={<Layout />}>
+            {menuRoutes.map(({ id, path, Element }) => (
+              <Route key={id} path={path} element={<Element />} />
+            ))}
+          </Route>
           <Route
-            path="/"
-            element={<ItemListContainer greeting={greeting} sx={{ m: 2 }} />}
+            path="*"
+            element={
+              <div
+                style={{
+                  margin: "20px",
+                }}
+              >
+                <h1>error 404</h1>
+                <h3>inexistente</h3>
+              </div>
+            }
           />
-          <Route
-            path="/categoria/:categoryName"
-            element={<ItemListContainer sx={{ m: 2 }} />}
-          />
-          <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
-          <Route path="/cart" element={<CartContainer />} />
-        </Route>
-        <Route
-          path="*"
-          element={
-            <div
-              style={{
-                margin: "20px",
-              }}
-            >
-              <h1>error 404</h1>
-              <h3>inexistente</h3>
-            </div>
-          }
-        />
-      </Routes>
+        </Routes>
+      </CartContextProvider>
     </BrowserRouter>
   );
 }

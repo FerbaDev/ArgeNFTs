@@ -10,10 +10,11 @@ import {
 } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
-import "./navbar.css";
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary";
 import CartWidget from "./Carrito";
 import { Link } from "react-router-dom";
+import { menuNavbar } from "../../../routes/menuNavbar";
+import "./navbar.css";
 
 function NavBar() {
   return (
@@ -99,10 +100,15 @@ function NavBar() {
               gap: 2,
             }}
           >
-            <Link to={"/"}>General</Link>
+            {menuNavbar.map(({ id, path, title }) => (
+              <Link key={id} to={path}>
+                {title}
+              </Link>
+            ))}
+            {/* <Link to={"/"}>General</Link>
             <Link to={"/categoria/sailenore"}>Sailenore</Link>
             <Link to={"/categoria/robosepu"}>Robosepu</Link>
-            <Link to={"/categoria/pixelfaces"}>Pixel Faces</Link>
+            <Link to={"/categoria/pixelfaces"}>Pixel Faces</Link> */}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
