@@ -1,24 +1,15 @@
 import { Box, Button } from "@mui/material";
 import { ItemCount } from "../../common/itemCount/ItemCount";
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
 
-export const ItemDetail = ({ productSelected, agregarAlCarrito, cantidad }) => {
-  // const [cantAgregada, setCantAgregada] = useState(0);
+export const ItemDetail = ({
+  productSelected,
 
-  // const handleOnAdd = (cantidad) => {
-  //   setCantAgregada(cantidad);
-  // };
-
-  const onAdd = (cantidad) => {
-    let data = {
-      ...productSelected,
-      quantity: cantidad,
-    };
-
-    agregarAlCarrito(data);
-  };
-
+  cantidad,
+  cantAgregada,
+  handleOnAdd,
+}) => {
   return (
     <div
       style={{
@@ -49,24 +40,27 @@ export const ItemDetail = ({ productSelected, agregarAlCarrito, cantidad }) => {
           <p>Artista: {productSelected.categoria}</p>
           <p>Precio: {productSelected.precio}</p>
         </div>
-        {productSelected.stock > 0 ? (
+
+        {cantAgregada > 0 ? (
+          <div>
+            <Link to="/cart">
+              <Button variant="contained" color="success">
+                Terminar compra
+              </Button>
+            </Link>
+            <Link to="/">
+              <Button variant="contained" color="primary">
+                Seguir comprando
+              </Button>
+            </Link>
+          </div>
+        ) : (
           <ItemCount
             stock={productSelected.stock}
             initial={cantidad}
-            onAdd={onAdd}
+            onAdd={handleOnAdd}
           />
-        ) : (
-          <h3>No hay stock</h3>
         )}
-        {/* {cantAgregada > 0 ? (
-          <Link to="/cart">
-            <Button variant="contained" color="primary">
-              Terminar compra
-            </Button>
-          </Link>
-        ) : (
-          <ItemCount stock={productSelected.stock} initial={1} onAdd={onAdd} />
-        )} */}
       </Box>
     </div>
   );

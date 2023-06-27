@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { ItemList } from "./ItemList";
-import { Box } from "@mui/material";
+import { Box, CircularProgress } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { products } from "../../asyncMock";
 
-export const ItemListContainer = ({ greeting }) => {
+export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
   const { categoryName } = useParams();
@@ -15,7 +15,9 @@ export const ItemListContainer = ({ greeting }) => {
     );
 
     const tarea = new Promise((resolve) => {
-      resolve(categoryName ? productosFiltrados : products);
+      setTimeout(() => {
+        resolve(categoryName ? productosFiltrados : products);
+      }, 500);
     });
     tarea
       .then((respuesta) => setItems(respuesta))
@@ -23,6 +25,21 @@ export const ItemListContainer = ({ greeting }) => {
         console.log(rechazo);
       });
   }, [categoryName]);
+
+  if (items.length === 0) {
+    return (
+      <Box
+        sx={{
+          height: "90vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <CircularProgress />
+      </Box>
+    );
+  }
 
   return (
     <Box sx={{ bgcolor: "primary.light", p: 2 }}>
