@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "./ItemDetail";
-import { products } from "../../asyncMock";
 import { CartContext } from "../../../context/CartContext";
 import { Box, CircularProgress } from "@mui/material";
+import { db } from "../../../firebaseConfig";
+import { collection, getDoc, doc } from "firebase/firestore";
 
 export const ItemDetailContainer = () => {
   const [productSelected, setProductSelect] = useState({});
@@ -15,10 +16,7 @@ export const ItemDetailContainer = () => {
   const cantidad = getTotalQuantityById(id);
   console.log("la cantidad es:", cantidad);
 
-  const [cantAgregada, setCantAgregada] = useState(0);
-
-  const handleOnAdd = (cantidad) => {
-    setCantAgregada(cantidad);
+  const onAdd = (cantidad) => {
     let data = {
       ...productSelected,
       quantity: cantidad,
@@ -28,17 +26,11 @@ export const ItemDetailContainer = () => {
   };
 
   useEffect(() => {
-    let productFind = products.find((product) => product.id === id);
-
-    const getProduct = new Promise((res) => {
-      setTimeout(() => {
-        res(productFind);
-      }, 500);
+    let itemsCollection = collection(db, "products");
+    let refDoc = doc(itemsCollection, id);
+    getDoc(refDoc).then((res) => {
+      setProductSelect({ id: res.id, ...res.data() });
     });
-
-    getProduct
-      .then((res) => setProductSelect(res))
-      .catch((err) => console.log(err));
   }, [id]);
 
   return (
@@ -49,8 +41,7 @@ export const ItemDetailContainer = () => {
           agregarAlCarrito={agregarAlCarrito}
           cantidad={cantidad}
           style={{ backgroundColor: "" }}
-          handleOnAdd={handleOnAdd}
-          cantAgregada={cantAgregada}
+          onAdd={onAdd}
         />
       ) : (
         <Box

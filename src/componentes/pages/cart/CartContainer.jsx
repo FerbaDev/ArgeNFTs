@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { Avatar, Box, Button, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export const CartContainer = () => {
   const { cart, clearCart, removeById, getTotalPrice } =
@@ -60,21 +61,35 @@ export const CartContainer = () => {
             );
           })}
         </div>
-        <div>
-          <h2>Summary</h2>
-          <p>Subtotal: ${total}</p>
-          <Button size="small" variant="contained">
-            Confirmar compra
-          </Button>
-          <Button
-            size="small"
-            variant="contained"
-            color="error"
-            onClick={clearCart}
-          >
-            Limpiar carrito
-          </Button>
-        </div>
+        {cart.length ? (
+          <>
+            <div>
+              <h2>Summary</h2>
+              <p>obras adquiridas: {cart.length}</p>
+              <p>Subtotal: ${total}</p>
+              <Link to={"/checkout"}>
+                <Button size="small" variant="contained">
+                  Confirmar compra
+                </Button>
+              </Link>
+              <Button
+                size="small"
+                variant="contained"
+                color="error"
+                onClick={clearCart}
+              >
+                Limpiar carrito
+              </Button>
+            </div>
+          </>
+        ) : (
+          <div>
+            <h3>El carrito está vacío</h3>
+            <Link to={"/"}>
+              <Button variant="contained">Ver colecciones</Button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

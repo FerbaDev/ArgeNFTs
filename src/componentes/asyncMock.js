@@ -1,6 +1,5 @@
 export const products = [
   {
-    id: "1",
     nombre: "SN001",
     precio: 12,
     descripcion: "Zanelator",
@@ -10,7 +9,6 @@ export const products = [
     categoria: "sailenore",
   },
   {
-    id: "2",
     nombre: "SN002",
     precio: 1234,
     descripcion: "Mi bandera",
@@ -20,7 +18,6 @@ export const products = [
     categoria: "sailenore",
   },
   {
-    id: "3",
     nombre: "SN003",
     precio: 145,
     descripcion: "Pocho Pantro",
@@ -30,7 +27,6 @@ export const products = [
     categoria: "sailenore",
   },
   {
-    id: "4",
     nombre: "SN004",
     precio: 123,
     descripcion: "Super Papa",
@@ -40,7 +36,6 @@ export const products = [
     categoria: "sailenore",
   },
   {
-    id: "5",
     nombre: "SN005",
     precio: 1244,
     descripcion: "Liliana",
@@ -50,7 +45,6 @@ export const products = [
     categoria: "sailenore",
   },
   {
-    id: "6",
     nombre: "SN006",
     precio: 1244,
     descripcion: "La Mona",
@@ -60,7 +54,6 @@ export const products = [
     categoria: "sailenore",
   },
   {
-    id: "7",
     nombre: "SN007",
     precio: 1244,
     descripcion: "Charlyneta",
@@ -70,7 +63,6 @@ export const products = [
     categoria: "sailenore",
   },
   {
-    id: "8",
     nombre: "SN008",
     precio: 1244,
     descripcion: "Bien ahi",
@@ -80,7 +72,6 @@ export const products = [
     categoria: "sailenore",
   },
   {
-    id: "9",
     nombre: "SN009",
     precio: 1244,
     descripcion: "Anthony Rivers",
@@ -90,7 +81,6 @@ export const products = [
     categoria: "sailenore",
   },
   {
-    id: "10",
     nombre: "RS001",
     precio: 0,
     descripcion: "",
@@ -100,7 +90,6 @@ export const products = [
     categoria: "robosepu",
   },
   {
-    id: "11",
     nombre: "RS002",
     precio: 0,
     descripcion: "",
@@ -110,7 +99,6 @@ export const products = [
     categoria: "robosepu",
   },
   {
-    id: "12",
     nombre: "RS003",
     precio: 0,
     descripcion: "",
@@ -120,7 +108,6 @@ export const products = [
     categoria: "robosepu",
   },
   {
-    id: "13",
     nombre: "RS004",
     precio: 0,
     descripcion: "",
@@ -130,7 +117,6 @@ export const products = [
     categoria: "robosepu",
   },
   {
-    id: "14",
     nombre: "RS005",
     precio: 0,
     descripcion: "",
@@ -140,7 +126,6 @@ export const products = [
     categoria: "robosepu",
   },
   {
-    id: "15",
     nombre: "RS006",
     precio: 0,
     descripcion: "",
@@ -150,7 +135,6 @@ export const products = [
     categoria: "robosepu",
   },
   {
-    id: "16",
     nombre: "RS007",
     precio: 0,
     descripcion: "",
@@ -160,7 +144,6 @@ export const products = [
     categoria: "robosepu",
   },
   {
-    id: "17",
     nombre: "RS008",
     precio: 0,
     descripcion: "",
@@ -170,7 +153,6 @@ export const products = [
     categoria: "robosepu",
   },
   {
-    id: "18",
     nombre: "RS009",
     precio: 0,
     descripcion: "",
@@ -180,7 +162,6 @@ export const products = [
     categoria: "robosepu",
   },
   {
-    id: "19",
     nombre: "PF001",
     precio: 0,
     descripcion: "",
@@ -190,7 +171,6 @@ export const products = [
     categoria: "pixelfaces",
   },
   {
-    id: "20",
     nombre: "PF002",
     precio: 0,
     descripcion: "",
@@ -200,7 +180,6 @@ export const products = [
     categoria: "pixelfaces",
   },
   {
-    id: "21",
     nombre: "PF003",
     precio: 0,
     descripcion: "",
@@ -210,7 +189,6 @@ export const products = [
     categoria: "pixelfaces",
   },
   {
-    id: "22",
     nombre: "PF004",
     precio: 0,
     descripcion: "",
@@ -220,7 +198,6 @@ export const products = [
     categoria: "pixelfaces",
   },
   {
-    id: "23",
     nombre: "PF005",
     precio: 0,
     descripcion: "",
@@ -230,7 +207,6 @@ export const products = [
     categoria: "pixelfaces",
   },
   {
-    id: "24",
     nombre: "PF006",
     precio: 0,
     descripcion: "",
@@ -240,7 +216,6 @@ export const products = [
     categoria: "pixelfaces",
   },
   {
-    id: "25",
     nombre: "PF007",
     precio: 0,
     descripcion: "",
@@ -250,7 +225,6 @@ export const products = [
     categoria: "pixelfaces",
   },
   {
-    id: "26",
     nombre: "PF008",
     precio: 0,
     descripcion: "",
@@ -260,7 +234,6 @@ export const products = [
     categoria: "pixelfaces",
   },
   {
-    id: "27",
     nombre: "PF009",
     precio: 0,
     descripcion: "",

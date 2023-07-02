@@ -7,8 +7,8 @@ export const ItemDetail = ({
   productSelected,
 
   cantidad,
-  cantAgregada,
-  handleOnAdd,
+  cantidadAgregada,
+  onAdd,
 }) => {
   return (
     <div
@@ -41,9 +41,14 @@ export const ItemDetail = ({
           <p>Precio: {productSelected.precio}</p>
         </div>
 
-        {cantAgregada > 0 ? (
+        {productSelected.stock > 0 ? (
           <div>
-            <Link to="/cart">
+            <ItemCount
+              stock={productSelected.stock}
+              initial={cantidad}
+              onAdd={onAdd}
+            />
+            {/* <Link to="/cart">
               <Button variant="contained" color="success">
                 Terminar compra
               </Button>
@@ -52,14 +57,15 @@ export const ItemDetail = ({
               <Button variant="contained" color="primary">
                 Seguir comprando
               </Button>
-            </Link>
+            </Link> */}
           </div>
         ) : (
-          <ItemCount
-            stock={productSelected.stock}
-            initial={cantidad}
-            onAdd={handleOnAdd}
-          />
+          <h1>sin stock</h1>
+          // <ItemCount
+          //   stock={productSelected.stock}
+          //   initial={cantidad}
+          //   onAdd={handleOnAdd}
+          // />
         )}
       </Box>
     </div>

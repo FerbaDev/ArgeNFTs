@@ -2,7 +2,7 @@ export const menuNavbar = [
   {
     id: "home",
     path: "/",
-    title: "General",
+    title: "Colecciones",
   },
   {
     id: "sailenore",

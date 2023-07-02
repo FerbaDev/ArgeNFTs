@@ -4,7 +4,6 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  Menu,
   Container,
   Tooltip,
 } from "@mui/material";
@@ -51,23 +50,8 @@ function NavBar() {
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              <Typography textAlign="center"></Typography>
-            </Menu>
+
+            <Typography textAlign="center"></Typography>
           </Box>
           <PhotoLibraryIcon
             sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
@@ -76,8 +60,6 @@ function NavBar() {
             <Typography
               variant="h5"
               noWrap
-              component="a"
-              href=""
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "none" },
@@ -105,31 +87,22 @@ function NavBar() {
                 {title}
               </Link>
             ))}
-            {/* <Link to={"/"}>General</Link>
-            <Link to={"/categoria/sailenore"}>Sailenore</Link>
-            <Link to={"/categoria/robosepu"}>Robosepu</Link>
-            <Link to={"/categoria/pixelfaces"}>Pixel Faces</Link> */}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                gap: "1em",
+                alignItems: "center",
+              }}
+            >
               <Link to="/cart">
                 <CartWidget />
               </Link>
-            </Tooltip>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-            ></Menu>
+              <Link to="/firebase-auth">Conectarse</Link>
+            </div>
           </Box>
         </Toolbar>
       </Container>
