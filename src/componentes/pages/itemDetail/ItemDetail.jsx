@@ -1,13 +1,11 @@
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import { ItemCount } from "../../common/itemCount/ItemCount";
-
-import { Link } from "react-router-dom";
 
 export const ItemDetail = ({
   productSelected,
 
   cantidad,
-  cantidadAgregada,
+
   onAdd,
 }) => {
   return (
@@ -48,24 +46,9 @@ export const ItemDetail = ({
               initial={cantidad}
               onAdd={onAdd}
             />
-            {/* <Link to="/cart">
-              <Button variant="contained" color="success">
-                Terminar compra
-              </Button>
-            </Link>
-            <Link to="/">
-              <Button variant="contained" color="primary">
-                Seguir comprando
-              </Button>
-            </Link> */}
           </div>
         ) : (
           <h1>sin stock</h1>
-          // <ItemCount
-          //   stock={productSelected.stock}
-          //   initial={cantidad}
-          //   onAdd={handleOnAdd}
-          // />
         )}
       </Box>
     </div>

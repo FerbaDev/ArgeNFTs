@@ -7,7 +7,6 @@ export const CartContainer = () => {
   const { cart, clearCart, removeById, getTotalPrice } =
     useContext(CartContext);
   let total = getTotalPrice();
-  console.log(cart);
   return (
     <div
       style={{
@@ -85,7 +84,7 @@ export const CartContainer = () => {
         ) : (
           <div>
             <h3>El carrito está vacío</h3>
-            <Link to={"/"}>
+            <Link to={"/home"}>
               <Button variant="contained">Ver colecciones</Button>
             </Link>
           </div>

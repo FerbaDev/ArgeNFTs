@@ -42,7 +42,7 @@ export const ItemCount = ({ stock, initial = 1, onAdd }) => {
                 Ir al carrito
               </Button>
             </Link>
-            <Link to={"/"}>
+            <Link to={"/home"}>
               <Button variant="contained">Seguir comprando</Button>
             </Link>
           </>

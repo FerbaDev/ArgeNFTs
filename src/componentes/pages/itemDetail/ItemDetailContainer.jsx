@@ -14,7 +14,6 @@ export const ItemDetailContainer = () => {
   const { id } = useParams();
 
   const cantidad = getTotalQuantityById(id);
-  console.log("la cantidad es:", cantidad);
 
   const onAdd = (cantidad) => {
     let data = {

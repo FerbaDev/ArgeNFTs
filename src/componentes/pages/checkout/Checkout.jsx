@@ -74,7 +74,7 @@ export const Checkout = ({ handleSubmit, handleChange, errors }) => {
         <Link to={"/cart"}>
           <Button variant="contained">Volver al carrito</Button>
         </Link>
-        <Link to={"/"}>
+        <Link to={"/home"}>
           <Button variant="contained">Volver a la tienda</Button>
         </Link>
       </div>

@@ -5,7 +5,6 @@ import {
   IconButton,
   Typography,
   Container,
-  Tooltip,
 } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
@@ -23,7 +22,7 @@ function NavBar() {
           <PhotoLibraryIcon
             sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
           />
-          <Link to="/" style={{ textDecoration: "none", color: "alice" }}>
+          <Link to="/home" style={{ textDecoration: "none", color: "alice" }}>
             <Typography
               variant="h6"
               noWrap
@@ -56,7 +55,7 @@ function NavBar() {
           <PhotoLibraryIcon
             sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
           />
-          <Link to="/">
+          <Link to="/home">
             <Typography
               variant="h5"
               noWrap

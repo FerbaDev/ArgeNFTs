@@ -1,7 +1,7 @@
 export const menuNavbar = [
   {
     id: "home",
-    path: "/",
+    path: "/home",
     title: "Colecciones",
   },
   {

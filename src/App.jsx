@@ -3,12 +3,14 @@ import Layout from "./componentes/layout/Layout";
 
 import { menuRoutes } from "./routes/menurRoutes";
 import { CartContextProvider } from "./context/CartContext";
+import { Portada } from "./componentes/pages/portada/Portada";
 
 function App() {
   return (
     <BrowserRouter>
       <CartContextProvider>
         <Routes>
+          <Route path="/" element={<Portada />}></Route>
           <Route element={<Layout />}>
             {menuRoutes.map(({ id, path, Element }) => (
               <Route key={id} path={path} element={<Element />} />
@@ -34,14 +36,3 @@ function App() {
 }
 
 export default App;
-
-{
-  /* <NavBar />
-      <Box sx={{ padding: 2, bgcolor: "primary.light" }}>
-        <Box sx={{ mb: 2, display: "flex" }}>
-          <ItemListContainer greeting={greeting} sx={{ m: 2 }} />
-        </Box>
-        <ItemDetailContainer />
-      </Box>
-      <ProductDetailContainer /> */
-}

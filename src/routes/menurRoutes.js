@@ -4,11 +4,17 @@ import { CheckoutContainer } from "../componentes/pages/checkout/CheckoutContain
 import { FirebaseAuth } from "../componentes/pages/firebaseauth/FirebaseAuth";
 import { ItemDetailContainer } from "../componentes/pages/itemDetail/ItemDetailContainer";
 import { ItemListContainer } from "../componentes/pages/itemListContainer/ItemListContainer";
+import { Portada } from "../componentes/pages/portada/Portada";
 
 export const menuRoutes = [
+  // {
+  //   id: "home",
+  //   path: "/",
+  //   Element: Portada,
+  // },
   {
-    id: "home",
-    path: "/",
+    id: "tienda",
+    path: "/home",
     Element: ItemListContainer,
   },
   {

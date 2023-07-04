@@ -47,7 +47,7 @@ export const CheckoutContainer = () => {
         .min(10, "Ingrese un dato válido"),
     }),
   });
-  console.log(errors);
+
   return (
     <div>
       {orderId ? (
