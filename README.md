@@ -55,12 +55,14 @@ instalacion de Material UI:
 
 3. Crear un archivo `.env` en la raiz del proyecto con las siguientes variables de entorno:
 
-`VITE_APIKEY=AIzaSyAOKZy5t9hWL6KJ4NytNiDFWyRsJ4e-IjE
-VITE_AUTH_DOMAIN=trabajo-react-fer.firebaseapp.com
-VITE_PROJECT_ID=trabajo-react-fer
-VITE_STORAGE_BUCKET=trabajo-react-fer.appspot.com
-VITE_MESSAGING=781629716369
-VITE_APP_ID=1:781629716369:web:a7379e8e93b2c3804f0c30`
+```
+    VITE_APIKEY=AIzaSyAOKZy5t9hWL6KJ4NytNiDFWyRsJ4e-IjE
+    VITE_AUTH_DOMAIN=trabajo-react-fer.firebaseapp.com
+    VITE_PROJECT_ID=trabajo-react-fer
+    VITE_STORAGE_BUCKET=trabajo-react-fer.appspot.com
+    VITE_MESSAGING=781629716369
+    VITE_APP_ID=1:781629716369:web:a7379e8e93b2c3804f0c30
+```
 
 4. Ejecutar el proyecto ejecutando `npm run dev`
 5. Acceder al local host haciendo Ctrl y click en el enlace al mismo.
