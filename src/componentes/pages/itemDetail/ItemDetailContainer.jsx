@@ -2,9 +2,11 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ItemDetail } from "./ItemDetail";
 import { CartContext } from "../../../context/CartContext";
-import { Box, CircularProgress } from "@mui/material";
+import { CircularProgress } from "@mui/material";
 import { db } from "../../../firebaseConfig";
 import { collection, getDoc, doc } from "firebase/firestore";
+import "../itemListContainer/item.css";
+import Swal from "sweetalert2";
 
 export const ItemDetailContainer = () => {
   const [productSelected, setProductSelect] = useState({});
@@ -21,7 +23,13 @@ export const ItemDetailContainer = () => {
       quantity: cantidad,
     };
     agregarAlCarrito(data);
-    alert("Se agregó exitosamente");
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Se agregó correctamente",
+      showConfirmButton: false,
+      timer: 1300,
+    });
   };
 
   useEffect(() => {
@@ -43,16 +51,9 @@ export const ItemDetailContainer = () => {
           onAdd={onAdd}
         />
       ) : (
-        <Box
-          sx={{
-            height: "90vh",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <div className="progress">
           <CircularProgress />
-        </Box>
+        </div>
       )}
     </div>
   );

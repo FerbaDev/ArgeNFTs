@@ -24,7 +24,8 @@ export const Portada = () => {
         }}
       >
         <h1>Bienvenidos a ArgeNFTs</h1>
-        <p>Mercado de NFTs de artistas argentinos</p>
+        <p>Mercado de NFTs argentinos</p>
+        <p>Arte, historia, cultura, lugares y personajes</p>
       </div>
       <div>
         <Link to={"/home"}>

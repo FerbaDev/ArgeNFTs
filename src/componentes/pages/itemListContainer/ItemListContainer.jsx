@@ -4,6 +4,7 @@ import { Box, CircularProgress } from "@mui/material";
 import { useParams } from "react-router-dom";
 import { db } from "../../../firebaseConfig";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import "./item.css";
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -36,21 +37,20 @@ export const ItemListContainer = () => {
 
   if (items.length === 0) {
     return (
-      <Box
-        sx={{
-          height: "90vh",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
+      <div className="progress">
         <CircularProgress />
-      </Box>
+      </div>
     );
   }
 
   return (
-    <Box sx={{ bgcolor: "primary.light", p: 2 }}>
+    <Box
+      sx={{
+        background:
+          "linear-gradient(83deg, rgba(66,165,245,1) 75%, rgba(233,230,128,1) 93%)",
+        p: 2,
+      }}
+    >
       <h1 style={{ color: "whitesmoke" }}>Bienvenidos amigos!</h1>
 
       <Box>

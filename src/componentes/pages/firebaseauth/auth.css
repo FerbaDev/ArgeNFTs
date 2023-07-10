@@ -1,0 +1,17 @@
+.container-auth {
+  background: linear-gradient(
+    54deg,
+    rgba(66, 165, 245, 1) 75%,
+    rgba(233, 230, 128, 1) 93%
+  );
+  color: aliceblue;
+  padding: 20px;
+  min-height: 75vh;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 1em;
+}

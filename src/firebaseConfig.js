@@ -22,9 +22,9 @@ export const db = getFirestore(app);
 
 const auth = getAuth(app);
 
-export const ingresar = async ({ email, password }) => {
+export const ingresar = async ({ usuario, contraseña }) => {
   try {
-    return await signInWithEmailAndPassword(auth, email, password);
+    return await signInWithEmailAndPassword(auth, usuario, contraseña);
   } catch (error) {
     console.error(error);
     alert("Email inválido");

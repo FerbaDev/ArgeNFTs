@@ -2,21 +2,35 @@ import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import { Avatar, Box, Button, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import "./cart.css";
+import Swal from "sweetalert2";
 
 export const CartContainer = () => {
   const { cart, clearCart, removeById, getTotalPrice } =
     useContext(CartContext);
+
+  const limpiar = () => {
+    Swal.fire({
+      title: "Seguro queres limpiar el carrito?",
+      showDenyButton: true,
+      showCancelButton: false,
+      confirmButtonText: "Si, limpiar",
+      denyButtonText: `No, cancelar`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        clearCart();
+        Swal.fire("Carrito vacío", "", "success");
+      } else if (result.isDenied) {
+        Swal.fire("Cancelado", "", "info");
+      }
+    });
+  };
+
   let total = getTotalPrice();
+
   return (
-    <div
-      style={{
-        background:
-          "linear-gradient(54deg, rgba(66,165,245,1) 75%, rgba(233,230,128,1) 93%)",
-        padding: "20px",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
+    <div className="container">
       <Typography variant="h3" component="div">
         Carrito
       </Typography>
@@ -62,23 +76,27 @@ export const CartContainer = () => {
         </div>
         {cart.length ? (
           <>
-            <div>
-              <h2>Summary</h2>
-              <p>obras adquiridas: {cart.length}</p>
-              <p>Subtotal: ${total}</p>
-              <Link to={"/checkout"}>
-                <Button size="small" variant="contained">
-                  Confirmar compra
+            <div className="summary">
+              <div>
+                <h2>Summary</h2>
+                <p>obras adquiridas: {cart.length}</p>
+                <p>Subtotal: ${total}</p>
+              </div>
+              <div>
+                <Link to={"/checkout"}>
+                  <Button size="small" variant="contained">
+                    Confirmar compra
+                  </Button>
+                </Link>
+                <Button
+                  size="small"
+                  variant="contained"
+                  color="error"
+                  onClick={limpiar}
+                >
+                  Limpiar carrito
                 </Button>
-              </Link>
-              <Button
-                size="small"
-                variant="contained"
-                color="error"
-                onClick={clearCart}
-              >
-                Limpiar carrito
-              </Button>
+              </div>
             </div>
           </>
         ) : (

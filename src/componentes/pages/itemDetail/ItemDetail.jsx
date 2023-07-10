@@ -1,5 +1,6 @@
-import { Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { ItemCount } from "../../common/itemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 export const ItemDetail = ({
   productSelected,
@@ -48,7 +49,12 @@ export const ItemDetail = ({
             />
           </div>
         ) : (
-          <h1>sin stock</h1>
+          <div>
+            <h3>sin stock</h3>
+            <Link to={-1}>
+              <Button variant="contained">Atrás</Button>
+            </Link>
+          </div>
         )}
       </Box>
     </div>
