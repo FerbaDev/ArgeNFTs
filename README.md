@@ -1,9 +1,11 @@
 # ArgeNFTs
 
+[![imagen](https://res.cloudinary.com/dwl4yy7q6/image/upload/v1685704340/tp%20react/sailenore/soldemayo_z3cgvt.png "imagen")](https://res.cloudinary.com/dwl4yy7q6/image/upload/v1685704340/tp%20react/sailenore/soldemayo_z3cgvt.png "imagen")
+
 Este proyecto se trata de una página de venta de NFTs relativos a la Argentina. Fue creado como trabajo final del curso de React JS de Coderhouse.
 El objetivo es mostrar y vender NFTs que homenajeen a personajes, paisajes, elementos y obras emblematicos de la Argentina, como así también a sus artistas digitales.
 
-## Herramientas y librerías
+## Herramientas y librerías usadas en este proyecto
 
 Para el desarrollo de este proyecto se utilizaron las siguientes herramientas y librerías:
 
@@ -22,6 +24,8 @@ Para el desarrollo de este proyecto se utilizaron las siguientes herramientas y 
 - Formik y Yup: para crear formularios con toda la lógica necesaria implícita y su respectiva validación. Excelentes herramientas.
 
 - Sweet Alert 2: para crear alertas preestiladas.
+
+![](https://res.cloudinary.com/dwl4yy7q6/image/upload/v1689010252/tp%20react/captura_argenfts_yhstrx.png)
 
 ### Instrucciones para clonar y ejecutar este proyecto
 
