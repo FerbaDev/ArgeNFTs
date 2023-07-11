@@ -66,3 +66,5 @@ instalacion de Material UI:
 
 4. Ejecutar el proyecto ejecutando `npm run dev`
 5. Acceder al local host haciendo Ctrl y click en el enlace al mismo.
+
+El deploy esta hecho en Vercel y pueden conocer la página haciendo click [aquí](https://tp-react-fernando-barron.vercel.app/).

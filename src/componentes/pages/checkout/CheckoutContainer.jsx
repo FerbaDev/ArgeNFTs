@@ -5,6 +5,7 @@ import { db } from "../../../firebaseConfig";
 import { collection, addDoc, updateDoc, doc } from "firebase/firestore";
 import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
+import "../cart/cart.css";
 
 export const CheckoutContainer = () => {
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
@@ -51,7 +52,10 @@ export const CheckoutContainer = () => {
   return (
     <div>
       {orderId ? (
-        alert(`Compra exitosa. Nª de orden ${orderId}`)
+        <div className="container">
+          <h2>{`Compra exitosa. Nª de orden ${orderId}`}</h2>
+          <h3>Muchas gracias!!!</h3>
+        </div>
       ) : (
         <Checkout
           handleSubmit={handleSubmit}
