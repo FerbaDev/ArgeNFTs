@@ -1,15 +1,9 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Typography,
-} from "@mui/material";
+import { Button, CardActions, CardContent, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export const Item = ({ id, nombre, precio, img, stock }) => {
   return (
-    <Card sx={{ width: 275, m: 2 }}>
+    <div className="tarjeta">
       <CardContent>
         <Typography variant="h5" component="div">
           Nombre: {nombre}
@@ -29,6 +23,6 @@ export const Item = ({ id, nombre, precio, img, stock }) => {
           </Button>
         </Link>
       </CardActions>
-    </Card>
+    </div>
   );
 };
