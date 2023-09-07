@@ -49,6 +49,7 @@ export const ItemListContainer = () => {
         background:
           "linear-gradient(83deg, rgba(66,165,245,1) 75%, rgba(233,230,128,1) 93%)",
         p: 2,
+        width: "100%",
       }}
     >
       <h1 style={{ color: "whitesmoke" }}>Bienvenidos amigos!</h1>

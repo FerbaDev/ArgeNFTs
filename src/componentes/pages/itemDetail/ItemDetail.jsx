@@ -25,7 +25,7 @@ export const ItemDetail = ({
           p: 2,
           backgroundColor: "white",
           borderRadius: "10px",
-          width: "25%",
+          width: "auto",
         }}
       >
         <h3>{productSelected.nombre}</h3>

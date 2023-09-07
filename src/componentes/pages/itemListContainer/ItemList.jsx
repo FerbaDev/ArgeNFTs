@@ -7,7 +7,7 @@ export const ItemList = ({ items }) => {
       sx={{
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "flex-start",
+        justifyContent: "center",
         alignItems: "center",
       }}
     >
